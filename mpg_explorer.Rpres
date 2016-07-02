@@ -1,0 +1,50 @@
+<style>
+  .reveal pre { font-size: 9px !important; }
+</style>
+MPG Explorer
+========================================================
+author: Artem Larionov
+date: 07/02/2016
+autosize: true
+
+What is MPG?
+========================================================
+
+MPG (Miles per gallon) is a measure of the average distance traveled per gallon of gasoline.
+
+### Why MPG is important?
+- Saves You Money
+- Reduces Climate Change
+- Reduces Oil Dependence Costs
+- Increases Energy Sustainability
+
+How analysis was done?
+========================================================
+
+For training the model `mtcars` dataset and `lm` method for linear regressions were used. 
+
+```{r}
+head(mtcars)
+summary(mtcars)
+```
+
+What MPG is correlated with?
+========================================================
+
+```{r, echo=FALSE}
+library(dplyr)
+library(corrplot)
+corrplot(cor(select(mtcars, mpg, wt, cyl, am)))
+```
+
+***
+
+We can see that MPG is correlated with weight of the car, number of cylinders and type of transmission.
+
+Summary
+===============================
+
+Choosing a car with higher MPG will help save your own money and help environment!
+
+
+[Choose right!](https://dataproduct-jh.shinyapps.io/data-product/)
